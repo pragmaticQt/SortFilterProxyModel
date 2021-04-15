@@ -22,7 +22,7 @@ void registerFiltersTypes() {
     qmlRegisterType<AllOfFilter>("SortFilterProxyModel", 0, 2, "AllOf");
     qmlRegisterUncreatableType<FilterContainerAttached>("SortFilterProxyModel", 0, 2, "FilterContainer", "FilterContainer can only be used as an attaching type");
 }
-
+#ifndef BUILT_AS_PLUGINS
 Q_COREAPP_STARTUP_FUNCTION(registerFiltersTypes)
-
+#endif
 }

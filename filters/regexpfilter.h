@@ -10,7 +10,7 @@ class RegExpFilter : public RoleFilter {
     Q_PROPERTY(QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)
     Q_PROPERTY(PatternSyntax syntax READ syntax WRITE setSyntax NOTIFY syntaxChanged)
     Q_PROPERTY(Qt::CaseSensitivity caseSensitivity READ caseSensitivity WRITE setCaseSensitivity NOTIFY caseSensitivityChanged)
-
+    QML_ELEMENT
 public:
     enum PatternSyntax {
         RegExp = QRegExp::RegExp,
@@ -19,7 +19,7 @@ public:
         RegExp2 = QRegExp::RegExp2,
         WildcardUnix = QRegExp::WildcardUnix,
         W3CXmlSchema11 = QRegExp::W3CXmlSchema11 };
-    Q_ENUMS(PatternSyntax)
+    Q_ENUM(PatternSyntax)
 
     using RoleFilter::RoleFilter;
 

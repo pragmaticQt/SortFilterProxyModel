@@ -10,6 +10,7 @@ class JoinRole : public SingleRole
     Q_OBJECT
     Q_PROPERTY(QStringList roleNames READ roleNames WRITE setRoleNames NOTIFY roleNamesChanged)
     Q_PROPERTY(QString separator READ separator WRITE setSeparator NOTIFY separatorChanged)
+    QML_ELEMENT
 
 public:
     using SingleRole::SingleRole;

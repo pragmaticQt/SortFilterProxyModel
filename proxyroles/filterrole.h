@@ -12,6 +12,7 @@ class FilterRole : public SingleRole, public FilterContainer
     Q_INTERFACES(qqsfpm::FilterContainer)
     Q_PROPERTY(QQmlListProperty<qqsfpm::Filter> filters READ filtersListProperty)
     Q_CLASSINFO("DefaultProperty", "filters")
+    QML_ELEMENT
 
 public:
     using SingleRole::SingleRole;

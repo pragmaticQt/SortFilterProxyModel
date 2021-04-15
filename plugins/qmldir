@@ -1,0 +1,3 @@
+module SortFilterProxyModel
+plugin sortfilterproxymodelplugin
+typeinfo plugins.qmltypes

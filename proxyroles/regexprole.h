@@ -12,6 +12,7 @@ class RegExpRole : public ProxyRole
     Q_PROPERTY(QString roleName READ roleName WRITE setRoleName NOTIFY roleNameChanged)
     Q_PROPERTY(QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)
     Q_PROPERTY(Qt::CaseSensitivity caseSensitivity READ caseSensitivity WRITE setCaseSensitivity NOTIFY caseSensitivityChanged)
+    QML_ELEMENT
 
 public:
     using ProxyRole::ProxyRole;

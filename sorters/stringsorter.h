@@ -13,6 +13,7 @@ class StringSorter : public RoleSorter
     Q_PROPERTY(bool ignorePunctation READ ignorePunctation WRITE setIgnorePunctation NOTIFY ignorePunctationChanged)
     Q_PROPERTY(QLocale locale READ locale WRITE setLocale NOTIFY localeChanged)
     Q_PROPERTY(bool numericMode READ numericMode WRITE setNumericMode NOTIFY numericModeChanged)
+    QML_ELEMENT
 
 public:
     using RoleSorter::RoleSorter;

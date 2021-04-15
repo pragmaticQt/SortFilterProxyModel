@@ -10,7 +10,7 @@ class IndexFilter: public Filter {
     Q_OBJECT
     Q_PROPERTY(QVariant minimumIndex READ minimumIndex WRITE setMinimumIndex NOTIFY minimumIndexChanged)
     Q_PROPERTY(QVariant maximumIndex READ maximumIndex WRITE setMaximumIndex NOTIFY maximumIndexChanged)
-
+    QML_ELEMENT
 public:
     using Filter::Filter;
 

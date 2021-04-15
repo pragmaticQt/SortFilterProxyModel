@@ -7,6 +7,7 @@ namespace qqsfpm {
 
 class AnyOfFilter : public FilterContainerFilter {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     using FilterContainerFilter::FilterContainerFilter;

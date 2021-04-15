@@ -13,6 +13,7 @@ class RangeFilter : public RoleFilter
     Q_PROPERTY(bool minimumInclusive READ minimumInclusive WRITE setMinimumInclusive NOTIFY minimumInclusiveChanged)
     Q_PROPERTY(QVariant maximumValue READ maximumValue WRITE setMaximumValue NOTIFY maximumValueChanged)
     Q_PROPERTY(bool maximumInclusive READ maximumInclusive WRITE setMaximumInclusive NOTIFY maximumInclusiveChanged)
+    QML_ELEMENT
 
 public:
     using RoleFilter::RoleFilter;

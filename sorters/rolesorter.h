@@ -9,6 +9,7 @@ class RoleSorter : public Sorter
 {
     Q_OBJECT
     Q_PROPERTY(QString roleName READ roleName WRITE setRoleName NOTIFY roleNameChanged)
+    QML_ELEMENT
 
 public:
     using Sorter::Sorter;

@@ -17,7 +17,7 @@ void registerProxyRoleTypes() {
     qmlRegisterType<RegExpRole>("SortFilterProxyModel", 0, 2, "RegExpRole");
     qmlRegisterType<FilterRole>("SortFilterProxyModel", 0, 2, "FilterRole");
 }
-
+#ifndef BUILT_AS_PLUGINS
 Q_COREAPP_STARTUP_FUNCTION(registerProxyRoleTypes)
-
+#endif
 }

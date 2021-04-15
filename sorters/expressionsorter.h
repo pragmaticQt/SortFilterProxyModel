@@ -14,6 +14,7 @@ class ExpressionSorter : public Sorter
 {
     Q_OBJECT
     Q_PROPERTY(QQmlScriptString expression READ expression WRITE setExpression NOTIFY expressionChanged)
+    QML_ELEMENT
 
 public:
     using Sorter::Sorter;

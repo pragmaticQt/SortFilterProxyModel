@@ -36,6 +36,7 @@ class QQmlSortFilterProxyModel : public QSortFilterProxyModel,
     Q_PROPERTY(QQmlListProperty<qqsfpm::Sorter> sorters READ sortersListProperty)
     Q_PROPERTY(QQmlListProperty<qqsfpm::ProxyRole> proxyRoles READ proxyRolesListProperty)
 
+    QML_NAMED_ELEMENT(SortFilterProxyModel)
 public:
     enum PatternSyntax {
         RegExp = QRegExp::RegExp,
@@ -44,7 +45,7 @@ public:
         RegExp2 = QRegExp::RegExp2,
         WildcardUnix = QRegExp::WildcardUnix,
         W3CXmlSchema11 = QRegExp::W3CXmlSchema11 };
-    Q_ENUMS(PatternSyntax)
+    Q_ENUM(PatternSyntax)
 
     QQmlSortFilterProxyModel(QObject* parent = 0);
 

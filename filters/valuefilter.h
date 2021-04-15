@@ -9,7 +9,7 @@ namespace qqsfpm {
 class ValueFilter : public RoleFilter {
     Q_OBJECT
     Q_PROPERTY(QVariant value READ value WRITE setValue NOTIFY valueChanged)
-
+    QML_ELEMENT
 public:
     using RoleFilter::RoleFilter;
 

@@ -12,6 +12,7 @@ class ExpressionFilter : public Filter
 {
     Q_OBJECT
     Q_PROPERTY(QQmlScriptString expression READ expression WRITE setExpression NOTIFY expressionChanged)
+    QML_ELEMENT
 
 public:
     using Filter::Filter;

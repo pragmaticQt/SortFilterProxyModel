@@ -2,7 +2,7 @@
 #define SORTER_H
 
 #include <QObject>
-
+#include <QQmlEngine>
 namespace qqsfpm {
 
 class QQmlSortFilterProxyModel;
