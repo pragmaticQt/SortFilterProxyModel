@@ -42,4 +42,6 @@ private:
     bool m_inverted = false;
 };
 
+void registerFiltersTypes();
+
 #endif // FILTER_H

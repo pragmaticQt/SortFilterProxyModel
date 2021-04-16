@@ -55,5 +55,5 @@ private:
     int m_priority = 0;
 };
 
-
+void registerSorterTypes();
 #endif // SORTER_H

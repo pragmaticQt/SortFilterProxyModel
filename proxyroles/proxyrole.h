@@ -35,4 +35,6 @@ private:
     QMutex m_mutex;
 };
 
+void registerProxyRoleTypes();
+
 #endif // PROXYROLE_H

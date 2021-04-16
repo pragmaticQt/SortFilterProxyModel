@@ -568,3 +568,11 @@ void QQmlSortFilterProxyModel::onProxyRolesCleared()
     endResetModel();
 }
 
+void registerQQmlSortFilterProxyModelTypes();
+void registerAllTypes()
+{
+    registerSorterTypes();
+    registerFiltersTypes();
+    registerProxyRoleTypes();
+    registerQQmlSortFilterProxyModelTypes();
+}

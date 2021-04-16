@@ -7,11 +7,6 @@
 #include "sorters/sortercontainer.h"
 #include "proxyroles/proxyrolecontainer.h"
 
-void registerSorterTypes();
-void registerFiltersTypes();
-void registerProxyRoleTypes();
-void registerQQmlSortFilterProxyModelTypes();
-
 class QQmlSortFilterProxyModel : public QSortFilterProxyModel,
                                  public QQmlParserStatus,
                                  public FilterContainer,
@@ -158,5 +153,7 @@ private:
     bool m_invalidateQueued = false;
     bool m_invalidateProxyRolesQueued = false;
 };
+
+void registerAllTypes();
 
 #endif // QQMLSORTFILTERPROXYMODEL_H
