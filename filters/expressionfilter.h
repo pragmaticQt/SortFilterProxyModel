@@ -6,8 +6,6 @@
 
 class QQmlExpression;
 
-namespace qqsfpm {
-
 class ExpressionFilter : public Filter
 {
     Q_OBJECT
@@ -36,7 +34,5 @@ private:
     QQmlExpression* m_expression = nullptr;
     QQmlContext* m_context = nullptr;
 };
-
-}
 
 #endif // EXPRESSIONFILTER_H

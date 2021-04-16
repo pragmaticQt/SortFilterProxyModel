@@ -3,7 +3,6 @@
 
 #include "sorter.h"
 
-namespace qqsfpm {
 
 class RoleSorter : public Sorter
 {
@@ -28,6 +27,5 @@ private:
     QString m_roleName;
 };
 
-}
 
 #endif // ROLESORTER_H

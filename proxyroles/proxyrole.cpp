@@ -8,8 +8,6 @@
 #include "filters/filter.h"
 #include "qqmlsortfilterproxymodel.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype ProxyRole
     \inqmlmodule SortFilterProxyModel
@@ -41,6 +39,4 @@ void ProxyRole::proxyModelCompleted(const QQmlSortFilterProxyModel &proxyModel)
 void ProxyRole::invalidate()
 {
     Q_EMIT invalidated();
-}
-
 }

@@ -4,8 +4,6 @@
 #include "rolefilter.h"
 #include <QVariant>
 
-namespace qqsfpm {
-
 class RangeFilter : public RoleFilter
 {
     Q_OBJECT
@@ -44,6 +42,5 @@ private:
     bool m_maximumInclusive = true;
 };
 
-}
 
 #endif // RANGEFILTER_H

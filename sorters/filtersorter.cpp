@@ -1,7 +1,6 @@
 #include "filtersorter.h"
 #include "filters/filter.h"
 
-namespace qqsfpm {
 
 /*!
     \qmltype FilterSorter
@@ -76,6 +75,4 @@ bool FilterSorter::indexIsAccepted(const QModelIndex& sourceIndex, const QQmlSor
             return filter->filterAcceptsRow(sourceIndex, proxyModel);
         }
     );
-}
-
 }

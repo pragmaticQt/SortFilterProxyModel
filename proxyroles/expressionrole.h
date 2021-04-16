@@ -6,8 +6,6 @@
 
 class QQmlExpression;
 
-namespace qqsfpm {
-
 class ExpressionRole : public SingleRole
 {
     Q_OBJECT
@@ -35,6 +33,5 @@ private:
     QQmlContext* m_context = nullptr;
 };
 
-}
 
 #endif // EXPRESSIONROLE_H

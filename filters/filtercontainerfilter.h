@@ -4,12 +4,10 @@
 #include "filter.h"
 #include "filtercontainer.h"
 
-namespace qqsfpm {
-
 class FilterContainerFilter : public Filter, public FilterContainer {
     Q_OBJECT
-    Q_INTERFACES(qqsfpm::FilterContainer)
-    Q_PROPERTY(QQmlListProperty<qqsfpm::Filter> filters READ filtersListProperty NOTIFY filtersChanged)
+    Q_INTERFACES(FilterContainer)
+    Q_PROPERTY(QQmlListProperty<Filter> filters READ filtersListProperty NOTIFY filtersChanged)
     Q_CLASSINFO("DefaultProperty", "filters")
 
 public:
@@ -25,7 +23,5 @@ private:
     void onFilterRemoved(Filter* filter) override;
     void onFiltersCleared() override;
 };
-
-}
 
 #endif // FILTERCONTAINERFILTER_H

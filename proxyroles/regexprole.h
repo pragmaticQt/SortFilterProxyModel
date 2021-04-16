@@ -4,8 +4,6 @@
 #include "proxyrole.h"
 #include <QRegularExpression>
 
-namespace qqsfpm {
-
 class RegExpRole : public ProxyRole
 {
     Q_OBJECT
@@ -38,7 +36,5 @@ private:
     QRegularExpression m_regularExpression;
     QVariant data(const QModelIndex &sourceIndex, const QQmlSortFilterProxyModel &proxyModel, const QString &name) override;
 };
-
-}
 
 #endif // REGEXPROLE_H

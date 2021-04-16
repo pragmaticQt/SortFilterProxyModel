@@ -3,8 +3,6 @@
 
 #include "filter.h"
 
-namespace qqsfpm {
-
 class RoleFilter : public Filter
 {
     Q_OBJECT
@@ -26,6 +24,5 @@ private:
     QString m_roleName;
 };
 
-}
 
 #endif // ROLEFILTER_H

@@ -1,8 +1,6 @@
 #include "joinrole.h"
 #include "qqmlsortfilterproxymodel.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype JoinRole
     \inherits SingleRole
@@ -78,6 +76,4 @@ QVariant JoinRole::data(const QModelIndex &sourceIndex, const QQmlSortFilterProx
         result.chop(m_separator.length());
 
     return result;
-}
-
 }

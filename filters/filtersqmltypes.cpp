@@ -9,9 +9,8 @@
 #include <QQmlEngine>
 #include <QCoreApplication>
 
-namespace qqsfpm {
-
 void registerFiltersTypes() {
+    qDebug() << "registerFiltersTypes";
     qmlRegisterUncreatableType<Filter>("SortFilterProxyModel", 0, 2, "Filter", "Filter is an abstract class");
     qmlRegisterType<ValueFilter>("SortFilterProxyModel", 0, 2, "ValueFilter");
     qmlRegisterType<IndexFilter>("SortFilterProxyModel", 0, 2, "IndexFilter");
@@ -22,7 +21,6 @@ void registerFiltersTypes() {
     qmlRegisterType<AllOfFilter>("SortFilterProxyModel", 0, 2, "AllOf");
     qmlRegisterUncreatableType<FilterContainerAttached>("SortFilterProxyModel", 0, 2, "FilterContainer", "FilterContainer can only be used as an attaching type");
 }
-#ifndef BUILT_AS_PLUGINS
-Q_COREAPP_STARTUP_FUNCTION(registerFiltersTypes)
-#endif
-}
+//#ifndef BUILT_AS_PLUGINS
+//Q_COREAPP_STARTUP_FUNCTION(registerFiltersTypes)
+//#endif

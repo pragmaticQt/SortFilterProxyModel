@@ -4,13 +4,11 @@
 #include "sorter.h"
 #include "filters/filtercontainer.h"
 
-namespace qqsfpm {
-
 class FilterSorter : public Sorter, public FilterContainer
 {
     Q_OBJECT
-    Q_INTERFACES(qqsfpm::FilterContainer)
-    Q_PROPERTY(QQmlListProperty<qqsfpm::Filter> filters READ filtersListProperty)
+    Q_INTERFACES(FilterContainer)
+    Q_PROPERTY(QQmlListProperty<Filter> filters READ filtersListProperty)
     Q_CLASSINFO("DefaultProperty", "filters")
     QML_ELEMENT
 
@@ -29,6 +27,5 @@ private:
     bool indexIsAccepted(const QModelIndex &sourceIndex, const QQmlSortFilterProxyModel &proxyModel) const;
 };
 
-}
 
 #endif // FILTERSORTER_H

@@ -4,13 +4,11 @@
 #include "singlerole.h"
 #include "filters/filtercontainer.h"
 
-namespace qqsfpm {
-
 class FilterRole : public SingleRole, public FilterContainer
 {
     Q_OBJECT
-    Q_INTERFACES(qqsfpm::FilterContainer)
-    Q_PROPERTY(QQmlListProperty<qqsfpm::Filter> filters READ filtersListProperty)
+    Q_INTERFACES(FilterContainer)
+    Q_PROPERTY(QQmlListProperty<Filter> filters READ filtersListProperty)
     Q_CLASSINFO("DefaultProperty", "filters")
     QML_ELEMENT
 
@@ -24,7 +22,5 @@ private:
 
     QVariant data(const QModelIndex& sourceIndex, const QQmlSortFilterProxyModel& proxyModel) override;
 };
-
-}
 
 #endif // FILTERROLE_H

@@ -1,8 +1,6 @@
 #include "filter.h"
 #include "qqmlsortfilterproxymodel.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype Filter
     \qmlabstract
@@ -80,6 +78,4 @@ void Filter::invalidate()
 {
     if (m_enabled)
         Q_EMIT invalidated();
-}
-
 }

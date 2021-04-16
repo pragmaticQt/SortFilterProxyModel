@@ -2,8 +2,6 @@
 #include "qqmlsortfilterproxymodel.h"
 #include <QtQml>
 
-namespace qqsfpm {
-
 /*!
     \qmltype ExpressionSorter
     \inherits Sorter
@@ -141,6 +139,4 @@ void ExpressionSorter::updateExpression()
     connect(m_expression, &QQmlExpression::valueChanged, this, &ExpressionSorter::invalidate);
     m_expression->setNotifyOnValueChanged(true);
     m_expression->evaluate();
-}
-
 }

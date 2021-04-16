@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QQmlEngine>
-namespace qqsfpm {
+
 
 class QQmlSortFilterProxyModel;
 
@@ -14,6 +14,8 @@ class Sorter : public QObject
     Q_PROPERTY(bool ascendingOrder READ ascendingOrder WRITE setAscendingOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(int priority READ priority WRITE setPriority NOTIFY priorityChanged)
+    QML_ELEMENT
+    QML_UNCREATABLE("Sorter is an abstract class")
 
 public:
     Sorter(QObject* parent = nullptr);
@@ -53,6 +55,5 @@ private:
     int m_priority = 0;
 };
 
-}
 
 #endif // SORTER_H

@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include <QQmlEngine>
-namespace qqsfpm {
 
 class QQmlSortFilterProxyModel;
 
@@ -12,6 +11,8 @@ class Filter : public QObject
     Q_OBJECT
     Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
     Q_PROPERTY(bool inverted READ inverted WRITE setInverted NOTIFY invertedChanged)
+    QML_ELEMENT
+    QML_UNCREATABLE("Filter is an abstract class")
 
 public:
     explicit Filter(QObject *parent = nullptr);
@@ -40,7 +41,5 @@ private:
     bool m_enabled = true;
     bool m_inverted = false;
 };
-
-}
 
 #endif // FILTER_H

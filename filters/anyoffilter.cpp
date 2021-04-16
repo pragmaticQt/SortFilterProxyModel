@@ -1,7 +1,5 @@
 #include "anyoffilter.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype AnyOf
     \inherits Filter
@@ -44,6 +42,4 @@ bool AnyOfFilter::filterRow(const QModelIndex& sourceIndex, const QQmlSortFilter
             return filter->enabled() && filter->filterAcceptsRow(sourceIndex, proxyModel);
         }
     );
-}
-
 }

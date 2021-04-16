@@ -4,12 +4,12 @@
 #include "proxyroles/singlerole.h"
 #include <QVariant>
 
-class StaticRole : public qqsfpm::SingleRole
+class StaticRole : public SingleRole
 {
     Q_OBJECT
     Q_PROPERTY(QVariant value READ value WRITE setValue NOTIFY valueChanged)
 public:
-    using qqsfpm::SingleRole::SingleRole;
+    using SingleRole::SingleRole;
 
     QVariant value() const;
     void setValue(const QVariant& value);
@@ -20,28 +20,28 @@ Q_SIGNALS:
 protected:
 
 private:
-    QVariant data(const QModelIndex& sourceIndex, const qqsfpm::QQmlSortFilterProxyModel& proxyModel) override;
+    QVariant data(const QModelIndex& sourceIndex, const QQmlSortFilterProxyModel& proxyModel) override;
     QVariant m_value;
 };
 
-class SourceIndexRole : public qqsfpm::SingleRole
+class SourceIndexRole : public SingleRole
 {
 public:
-    using qqsfpm::SingleRole::SingleRole;
+    using SingleRole::SingleRole;
 
 private:
-    QVariant data(const QModelIndex& sourceIndex, const qqsfpm::QQmlSortFilterProxyModel& proxyModel) override;
+    QVariant data(const QModelIndex& sourceIndex, const QQmlSortFilterProxyModel& proxyModel) override;
 };
 
-class MultiRole : public qqsfpm::ProxyRole
+class MultiRole : public ProxyRole
 {
 public:
-    using qqsfpm::ProxyRole::ProxyRole;
+    using ProxyRole::ProxyRole;
 
     QStringList names() override;
 
 private:
-    QVariant data(const QModelIndex &sourceIndex, const qqsfpm::QQmlSortFilterProxyModel &proxyModel, const QString &name) override;
+    QVariant data(const QModelIndex &sourceIndex, const QQmlSortFilterProxyModel &proxyModel, const QString &name) override;
 };
 
 #endif // TESTROLES_H

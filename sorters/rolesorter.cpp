@@ -1,8 +1,6 @@
 #include "rolesorter.h"
 #include "qqmlsortfilterproxymodel.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype RoleSorter
     \inherits Sorter
@@ -64,6 +62,4 @@ int RoleSorter::compare(const QModelIndex &sourceLeft, const QModelIndex& source
     if (leftValue > rightValue)
         return 1;
     return 0;
-}
-
 }

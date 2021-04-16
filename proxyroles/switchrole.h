@@ -5,8 +5,6 @@
 #include "filters/filtercontainer.h"
 #include <QtQml>
 
-namespace qqsfpm {
-
 class SwitchRoleAttached : public QObject
 {
     Q_OBJECT
@@ -27,10 +25,10 @@ private:
 class SwitchRole : public SingleRole, public FilterContainer
 {
     Q_OBJECT
-    Q_INTERFACES(qqsfpm::FilterContainer)
+    Q_INTERFACES(FilterContainer)
     Q_PROPERTY(QString defaultRoleName READ defaultRoleName WRITE setDefaultRoleName NOTIFY defaultRoleNameChanged)
     Q_PROPERTY(QVariant defaultValue READ defaultValue WRITE setDefaultValue NOTIFY defaultValueChanged)
-    Q_PROPERTY(QQmlListProperty<qqsfpm::Filter> filters READ filtersListProperty)
+    Q_PROPERTY(QQmlListProperty<Filter> filters READ filtersListProperty)
     Q_CLASSINFO("DefaultProperty", "filters")
     QML_ELEMENT
 
@@ -62,8 +60,6 @@ private:
     QVariant m_defaultValue;
 };
 
-}
-
-QML_DECLARE_TYPEINFO(qqsfpm::SwitchRole, QML_HAS_ATTACHED_PROPERTIES)
+QML_DECLARE_TYPEINFO(SwitchRole, QML_HAS_ATTACHED_PROPERTIES)
 
 #endif // SWITCHROLE_H

@@ -1,8 +1,6 @@
 #include "filterrole.h"
 #include "filters/filter.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype FilterRole
     \inherits SingleRole
@@ -60,6 +58,4 @@ QVariant FilterRole::data(const QModelIndex& sourceIndex, const QQmlSortFilterPr
             return filter->filterAcceptsRow(sourceIndex, proxyModel);
         }
     );
-}
-
 }

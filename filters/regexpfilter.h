@@ -3,8 +3,6 @@
 
 #include "rolefilter.h"
 
-namespace qqsfpm {
-
 class RegExpFilter : public RoleFilter {
     Q_OBJECT
     Q_PROPERTY(QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)
@@ -46,7 +44,5 @@ private:
     PatternSyntax m_syntax = static_cast<PatternSyntax>(m_regExp.patternSyntax());
     QString m_pattern = m_regExp.pattern();
 };
-
-}
 
 #endif // REGEXPFILTER_H

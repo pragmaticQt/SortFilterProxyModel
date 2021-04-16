@@ -3,8 +3,6 @@
 #include "filters/filter.h"
 #include <QtQml>
 
-namespace qqsfpm {
-
 /*!
     \qmltype SwitchRole
     \inherits SingleRole
@@ -163,6 +161,4 @@ void SwitchRole::onFilterRemoved(Filter *filter)
 void SwitchRole::onFiltersCleared()
 {
     invalidate();
-}
-
 }

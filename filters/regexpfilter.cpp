@@ -1,8 +1,6 @@
 #include "regexpfilter.h"
 #include <QVariant>
 
-namespace qqsfpm {
-
 /*!
     \qmltype RegExpFilter
     \inherits RoleFilter
@@ -108,6 +106,4 @@ bool RegExpFilter::filterRow(const QModelIndex& sourceIndex, const QQmlSortFilte
 {
     QString string = sourceData(sourceIndex, proxyModel).toString();
     return m_regExp.indexIn(string) != -1;
-}
-
 }

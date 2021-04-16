@@ -6,7 +6,6 @@
 #include <qqml.h>
 #include <QPointer>
 
-namespace qqsfpm {
 
 class Sorter;
 class QQmlSortFilterProxyModel;
@@ -40,6 +39,8 @@ class SorterContainerAttached : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QObject* container READ container WRITE setContainer NOTIFY containerChanged)
+    QML_NAMED_ELEMENT(SorterContainer)
+    QML_UNCREATABLE("SorterContainer can only be used as an attaching type")
 
 public:
     SorterContainerAttached(QObject* object);
@@ -58,11 +59,9 @@ private:
     Sorter* m_sorter = nullptr;
 };
 
-}
-
 #define SorterContainer_iid "fr.grecko.SortFilterProxyModel.SorterContainer"
-Q_DECLARE_INTERFACE(qqsfpm::SorterContainer, SorterContainer_iid)
+Q_DECLARE_INTERFACE(SorterContainer, SorterContainer_iid)
 
-QML_DECLARE_TYPEINFO(qqsfpm::SorterContainerAttached, QML_HAS_ATTACHED_PROPERTIES)
+QML_DECLARE_TYPEINFO(SorterContainerAttached, QML_HAS_ATTACHED_PROPERTIES)
 
 #endif // SORTERSSORTERCONTAINER_H

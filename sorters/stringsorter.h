@@ -4,7 +4,6 @@
 #include "rolesorter.h"
 #include <QCollator>
 
-namespace qqsfpm {
 
 class StringSorter : public RoleSorter
 {
@@ -42,7 +41,5 @@ protected:
 private:
     QCollator m_collator;
 };
-
-}
 
 #endif // STRINGSORTER_H

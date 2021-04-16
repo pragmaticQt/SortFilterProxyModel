@@ -2,8 +2,6 @@
 #include "filter.h"
 #include <QtQml>
 
-namespace qqsfpm {
-
 /*!
     \qmltype FilterContainer
     \qmlabstract
@@ -121,6 +119,4 @@ void FilterContainerAttached::setContainer(QObject* object)
 FilterContainerAttached* FilterContainerAttached::qmlAttachedProperties(QObject* object)
 {
     return new FilterContainerAttached(object);
-}
-
 }

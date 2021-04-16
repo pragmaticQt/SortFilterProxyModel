@@ -4,8 +4,6 @@
 #include "rolefilter.h"
 #include <QVariant>
 
-namespace qqsfpm {
-
 class ValueFilter : public RoleFilter {
     Q_OBJECT
     Q_PROPERTY(QVariant value READ value WRITE setValue NOTIFY valueChanged)
@@ -25,7 +23,5 @@ Q_SIGNALS:
 private:
     QVariant m_value;
 };
-
-}
 
 #endif // VALUEFILTER_H

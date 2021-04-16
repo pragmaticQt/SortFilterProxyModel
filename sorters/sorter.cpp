@@ -1,8 +1,6 @@
 #include "sorter.h"
 #include "qqmlsortfilterproxymodel.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype Sorter
     \qmlabstract
@@ -137,6 +135,4 @@ void Sorter::invalidate()
 {
     if (m_enabled)
         Q_EMIT invalidated();
-}
-
 }

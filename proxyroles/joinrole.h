@@ -3,8 +3,6 @@
 
 #include "singlerole.h"
 
-namespace qqsfpm {
-
 class JoinRole : public SingleRole
 {
     Q_OBJECT
@@ -31,7 +29,5 @@ private:
     QVariant data(const QModelIndex& sourceIndex, const QQmlSortFilterProxyModel& proxyModel) override;
     QString m_separator = " ";
 };
-
-}
 
 #endif // JOINROLE_H

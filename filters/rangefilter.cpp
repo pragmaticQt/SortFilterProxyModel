@@ -1,7 +1,5 @@
 #include "rangefilter.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype RangeFilter
     \inherits RoleFilter
@@ -134,6 +132,4 @@ bool RangeFilter::filterRow(const QModelIndex& sourceIndex, const QQmlSortFilter
     bool moreThanMax = m_maximumValue.isValid() &&
             (m_maximumInclusive ? value > m_maximumValue : value >= m_maximumValue);
     return !(lessThanMin || moreThanMax);
-}
-
 }

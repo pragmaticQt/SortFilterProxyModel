@@ -3,8 +3,6 @@
 
 #include "filtercontainerfilter.h"
 
-namespace qqsfpm {
-
 class AllOfFilter : public FilterContainerFilter {
     Q_OBJECT
     QML_ELEMENT
@@ -14,7 +12,5 @@ public:
 protected:
     bool filterRow(const QModelIndex& sourceIndex, const QQmlSortFilterProxyModel& proxyModel) const override;
 };
-
-}
 
 #endif // ALLOFFILTER_H

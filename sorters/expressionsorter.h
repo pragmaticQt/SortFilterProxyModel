@@ -6,8 +6,6 @@
 
 class QQmlExpression;
 
-namespace qqsfpm {
-
 class QQmlSortFilterProxyModel;
 
 class ExpressionSorter : public Sorter
@@ -38,7 +36,5 @@ private:
     QQmlExpression* m_expression = nullptr;
     QQmlContext* m_context = nullptr;
 };
-
-}
 
 #endif // EXPRESSIONSORTER_H

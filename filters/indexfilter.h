@@ -4,8 +4,6 @@
 #include "filter.h"
 #include <QVariant>
 
-namespace qqsfpm {
-
 class IndexFilter: public Filter {
     Q_OBJECT
     Q_PROPERTY(QVariant minimumIndex READ minimumIndex WRITE setMinimumIndex NOTIFY minimumIndexChanged)
@@ -31,7 +29,5 @@ private:
     QVariant m_minimumIndex;
     QVariant m_maximumIndex;
 };
-
-}
 
 #endif // INDEXFILTER_H

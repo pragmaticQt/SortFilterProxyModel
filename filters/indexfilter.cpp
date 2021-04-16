@@ -1,8 +1,6 @@
 #include "indexfilter.h"
 #include "qqmlsortfilterproxymodel.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype IndexFilter
     \inherits Filter
@@ -107,6 +105,4 @@ bool IndexFilter::filterRow(const QModelIndex& sourceIndex, const QQmlSortFilter
     }
 
     return true;
-}
-
 }

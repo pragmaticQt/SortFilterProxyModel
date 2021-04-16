@@ -4,8 +4,6 @@
 #include <QList>
 #include <QQmlListProperty>
 
-namespace qqsfpm {
-
 class ProxyRole;
 class QQmlSortFilterProxyModel;
 
@@ -34,9 +32,7 @@ private:
     static void clear_proxyRoles(QQmlListProperty<ProxyRole>* list);
 };
 
-}
-
 #define ProxyRoleContainer_iid "fr.grecko.SortFilterProxyModel.ProxyRoleContainer"
-Q_DECLARE_INTERFACE(qqsfpm::ProxyRoleContainer, ProxyRoleContainer_iid)
+Q_DECLARE_INTERFACE(ProxyRoleContainer, ProxyRoleContainer_iid)
 
 #endif // PROXYROLECONTAINER_H

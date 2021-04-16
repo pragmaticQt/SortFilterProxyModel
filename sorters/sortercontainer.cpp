@@ -2,8 +2,6 @@
 #include "sorter.h"
 #include <QtQml>
 
-namespace qqsfpm {
-
 /*!
     \qmltype SorterContainer
     \qmlabstract
@@ -121,6 +119,4 @@ void SorterContainerAttached::setContainer(QObject* object)
 SorterContainerAttached* SorterContainerAttached::qmlAttachedProperties(QObject* object)
 {
     return new SorterContainerAttached(object);
-}
-
 }

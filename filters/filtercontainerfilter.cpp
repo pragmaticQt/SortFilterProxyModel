@@ -1,7 +1,5 @@
 #include "filtercontainerfilter.h"
 
-namespace qqsfpm {
-
 void FilterContainerFilter::proxyModelCompleted(const QQmlSortFilterProxyModel& proxyModel)
 {
     for (Filter* filter : m_filters)
@@ -20,9 +18,8 @@ void FilterContainerFilter::onFilterRemoved(Filter* filter)
     invalidate();
 }
 
-void qqsfpm::FilterContainerFilter::onFiltersCleared()
+void FilterContainerFilter::onFiltersCleared()
 {
     invalidate();
 }
 
-}

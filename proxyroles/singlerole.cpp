@@ -1,8 +1,6 @@
 #include "singlerole.h"
 #include <QVariant>
 
-namespace qqsfpm {
-
 /*!
     \qmltype SingleRole
     \qmlabstract
@@ -47,6 +45,4 @@ QVariant SingleRole::data(const QModelIndex &sourceIndex, const QQmlSortFilterPr
 {
     Q_UNUSED(name);
     return data(sourceIndex, proxyModel);
-}
-
 }

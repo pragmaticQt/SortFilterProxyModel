@@ -3,8 +3,6 @@
 
 #include "proxyrole.h"
 
-namespace qqsfpm {
-
 class SingleRole : public ProxyRole
 {
     Q_OBJECT
@@ -28,7 +26,5 @@ private:
     QVariant data(const QModelIndex &sourceIndex, const QQmlSortFilterProxyModel &proxyModel, const QString &name) final;
     virtual QVariant data(const QModelIndex &sourceIndex, const QQmlSortFilterProxyModel &proxyModel) = 0;
 };
-
-}
 
 #endif // SINGLEROLE_H

@@ -1,8 +1,6 @@
 #include "rolefilter.h"
 #include "qqmlsortfilterproxymodel.h"
 
-namespace qqsfpm {
-
 /*!
     \qmltype RoleFilter
     \qmlabstract
@@ -40,6 +38,4 @@ void RoleFilter::setRoleName(const QString& roleName)
 QVariant RoleFilter::sourceData(const QModelIndex &sourceIndex, const QQmlSortFilterProxyModel& proxyModel) const
 {
     return proxyModel.sourceData(sourceIndex, m_roleName);
-}
-
 }

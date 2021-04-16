@@ -2,8 +2,6 @@
 #include "qqmlsortfilterproxymodel.h"
 #include <QtQml>
 
-namespace qqsfpm {
-
 /*!
     \qmltype ExpressionRole
     \inherits SingleRole
@@ -123,6 +121,4 @@ void ExpressionRole::updateExpression()
     connect(m_expression, &QQmlExpression::valueChanged, this, &ExpressionRole::invalidate);
     m_expression->setNotifyOnValueChanged(true);
     m_expression->evaluate();
-}
-
 }

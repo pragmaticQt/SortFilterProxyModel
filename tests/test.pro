@@ -3,7 +3,12 @@ TARGET = tst_sortfilterproxymodel
 QT += qml quick
 CONFIG += c++11 warn_on qmltestcase qml_debug no_keywords
 
-include(../SortFilterProxyModel.pri)
+#include(../SortFilterProxyModel.pri)
+INCLUDEPATH += .. \
+               ../sorters \
+               ../filters \
+               ../proxyroles
+LIBS += -L../release/ -lSortFilterProxyModelLib
 
 HEADERS += \
     indexsorter.h \

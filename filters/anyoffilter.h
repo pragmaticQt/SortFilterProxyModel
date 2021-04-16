@@ -3,11 +3,9 @@
 
 #include "filtercontainerfilter.h"
 
-namespace qqsfpm {
-
 class AnyOfFilter : public FilterContainerFilter {
     Q_OBJECT
-    QML_ELEMENT
+    QML_NAMED_ELEMENT(AnyOf)
 
 public:
     using FilterContainerFilter::FilterContainerFilter;
@@ -15,7 +13,5 @@ public:
 protected:
     bool filterRow(const QModelIndex& sourceIndex, const QQmlSortFilterProxyModel& proxyModel) const override;
 };
-
-}
 
 #endif // ANYOFFILTER_H

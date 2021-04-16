@@ -4,14 +4,14 @@
 #include <QObject>
 #include <QMutex>
 #include <QQmlEngine>
-namespace qqsfpm {
 
 class QQmlSortFilterProxyModel;
 
 class ProxyRole : public QObject
 {
     Q_OBJECT
-
+    QML_ELEMENT
+    QML_UNCREATABLE("ProxyRole is an abstract class")
 public:
     using QObject::QObject;
     virtual ~ProxyRole() = default;
@@ -34,7 +34,5 @@ private:
 
     QMutex m_mutex;
 };
-
-}
 
 #endif // PROXYROLE_H
