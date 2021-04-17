@@ -15,20 +15,13 @@ class Setup : public QObject
 public:
     Setup() {
         qDebug() << "Setup";
-        registerFiltersTypes();
-        registerSorterTypes();
-        registerProxyRoleTypes();
-        registerQQmlSortFilterProxyModelTypes();
+        registerAllTypes();
     }
 
     void qmlEngineAvailable(QQmlEngine *engine)
     {
+        Q_UNUSED(engine)
         qDebug() << "qmlEngineAvailable";
-        //        registerFiltersTypes();
-        //        registerSorterTypes();
-        //        registerProxyRoleTypes();
-        //        registerQQmlSortFilterProxyModelTypes();
-        //        engine->rootContext()->setContextProperty("myContextProperty", QVariant(true));
     }
 
 };
