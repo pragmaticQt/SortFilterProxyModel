@@ -1,8 +1,9 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
+    plugins \
     src/lib.pro \
     example \
     test
 
-CONFIG += ordered
+CONFIG += ordered release
