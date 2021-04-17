@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "qqmlsortfilterproxymodel.h"
+//#include "qqmlsortfilterproxymodel.h" and call registerAllTypes();
 
 int main(int argc, char *argv[])
 {
@@ -8,7 +8,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    registerAllTypes();
+    engine.addImportPath(QStringLiteral("."));
+    engine.addPluginPath(QStringLiteral("SortFilterProxyModel"));
+
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;

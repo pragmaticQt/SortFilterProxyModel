@@ -8,7 +8,7 @@ uri = SortFilterProxyModel
 
 QML_IMPORT_NAME = $$uri
 QML_IMPORT_MAJOR_VERSION = 1
-DESTDIR = imports/$$QML_IMPORT_NAME
+DESTDIR = $$QML_IMPORT_NAME
 
 include(../SortFilterProxyModel.pri)
 SOURCES += plugins.cpp
@@ -27,7 +27,7 @@ pluginfiles_copy.path = $$DESTDIR
 
 COPIES += pluginfiles_copy
 
-DEFINES += BUILT_AS_PLUGINS
+#DEFINES += BUILT_AS_PLUGINS
 
 #!equals(_PRO_FILE_PWD_, $$OUT_PWD) {
 #    copy_qmldir.target = DESTDIR/qmldir
