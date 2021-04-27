@@ -2,7 +2,7 @@
 #include "qqmlsortfilterproxymodel.h"
 
 void registerQQmlSortFilterProxyModelTypes() {
-    qmlRegisterType<QQmlSortFilterProxyModel>("SortFilterProxyModel", 0, 2, "SortFilterProxyModel");
+    qmlRegisterType<QQmlSortFilterProxyModel>("SortFilterProxyModel", 1, 0, "SortFilterProxyModel");
 }
 //#ifndef BUILT_AS_PLUGINS
 //Q_COREAPP_STARTUP_FUNCTION(registerQQmlSortFilterProxyModelTypes)

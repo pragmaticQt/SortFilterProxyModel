@@ -14,8 +14,8 @@ int ReverseIndexSorter::compare(const QModelIndex &sourceLeft, const QModelIndex
 }
 
 void registerIndexSorterTypes() {
-    qmlRegisterType<IndexSorter>("SortFilterProxyModel.Test", 0, 2, "IndexSorter");
-    qmlRegisterType<ReverseIndexSorter>("SortFilterProxyModel.Test", 0, 2, "ReverseIndexSorter");
+    qmlRegisterType<IndexSorter>("SortFilterProxyModel.Test", 1, 0, "IndexSorter");
+    qmlRegisterType<ReverseIndexSorter>("SortFilterProxyModel.Test", 1, 0, "ReverseIndexSorter");
 }
 
 Q_COREAPP_STARTUP_FUNCTION(registerIndexSorterTypes)

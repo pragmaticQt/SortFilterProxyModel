@@ -2,13 +2,15 @@ TEMPLATE = app
 TARGET = tst_sortfilterproxymodel
 QT += qml quick
 CONFIG += c++11 warn_on qmltestcase qml_debug no_keywords
+DESTDIR = ..
 
-include(../src/src.pri)
-#INCLUDEPATH += .. \
+#include(../src/src.pri)
+INCLUDEPATH += ../src
+#\
 #               ../sorters \
 #               ../filters \
 #               ../proxyroles
-#LIBS += -L../release/ -lSortFilterProxyModelLib
+LIBS += -L$$OUT_PWD/../lib -lSortFilterProxyModel
 
 HEADERS += \
     indexsorter.h \

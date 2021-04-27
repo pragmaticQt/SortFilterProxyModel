@@ -40,9 +40,9 @@ QVariant MultiRole::data(const QModelIndex&, const QQmlSortFilterProxyModel&, co
 }
 
 void registerTestRolesTypes() {
-    qmlRegisterType<StaticRole>("SortFilterProxyModel.Test", 0, 2, "StaticRole");
-    qmlRegisterType<SourceIndexRole>("SortFilterProxyModel.Test", 0, 2, "SourceIndexRole");
-    qmlRegisterType<MultiRole>("SortFilterProxyModel.Test", 0, 2, "MultiRole");
+    qmlRegisterType<StaticRole>("SortFilterProxyModel.Test", 1, 0, "StaticRole");
+    qmlRegisterType<SourceIndexRole>("SortFilterProxyModel.Test", 1, 0, "SourceIndexRole");
+    qmlRegisterType<MultiRole>("SortFilterProxyModel.Test", 1, 0, "MultiRole");
 }
 
 Q_COREAPP_STARTUP_FUNCTION(registerTestRolesTypes)

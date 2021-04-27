@@ -1,7 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.1
-//import SortFilterProxyModel 0.2
+//import SortFilterProxyModel 1.0
 import SortFilterProxyModel 1.0
 import QtQuick.Controls.Material 2.0
 

@@ -1,8 +1,8 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    plugins \
     src/lib.pro \
+    plugins \
     example \
     test
 

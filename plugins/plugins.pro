@@ -10,7 +10,9 @@ QML_IMPORT_NAME = $$uri
 QML_IMPORT_MAJOR_VERSION = 1
 DESTDIR = $$QML_IMPORT_NAME
 
-include(../src/src.pri)
+LIBS += -L$$OUT_PWD/../lib -lSortFilterProxyModel
+
+#include(../src/src.pri)
 SOURCES += plugins.cpp
 
 HEADERS +=

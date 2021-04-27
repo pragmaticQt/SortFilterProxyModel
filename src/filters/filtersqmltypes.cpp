@@ -10,17 +10,17 @@
 #include <QCoreApplication>
 
 void registerFiltersTypes() {
-    qDebug() << "registerFiltersTypes";
-    qmlRegisterUncreatableType<Filter>("SortFilterProxyModel", 0, 2, "Filter", "Filter is an abstract class");
-    qmlRegisterType<ValueFilter>("SortFilterProxyModel", 0, 2, "ValueFilter");
-    qmlRegisterType<IndexFilter>("SortFilterProxyModel", 0, 2, "IndexFilter");
-    qmlRegisterType<RegExpFilter>("SortFilterProxyModel", 0, 2, "RegExpFilter");
-    qmlRegisterType<RangeFilter>("SortFilterProxyModel", 0, 2, "RangeFilter");
-    qmlRegisterType<ExpressionFilter>("SortFilterProxyModel", 0, 2, "ExpressionFilter");
-    qmlRegisterType<AnyOfFilter>("SortFilterProxyModel", 0, 2, "AnyOf");
-    qmlRegisterType<AllOfFilter>("SortFilterProxyModel", 0, 2, "AllOf");
-    qmlRegisterUncreatableType<FilterContainerAttached>("SortFilterProxyModel", 0, 2, "FilterContainer", "FilterContainer can only be used as an attaching type");
+//    qDebug() << "registerFiltersTypes";
+    qmlRegisterUncreatableType<Filter>("SortFilterProxyModel", 1, 0, "Filter", "Filter is an abstract class");
+    qmlRegisterType<ValueFilter>("SortFilterProxyModel", 1, 0, "ValueFilter");
+    qmlRegisterType<IndexFilter>("SortFilterProxyModel", 1, 0, "IndexFilter");
+    qmlRegisterType<RegExpFilter>("SortFilterProxyModel", 1, 0, "RegExpFilter");
+    qmlRegisterType<RangeFilter>("SortFilterProxyModel", 1, 0, "RangeFilter");
+    qmlRegisterType<ExpressionFilter>("SortFilterProxyModel", 1, 0, "ExpressionFilter");
+    qmlRegisterType<AnyOfFilter>("SortFilterProxyModel", 1, 0, "AnyOf");
+    qmlRegisterType<AllOfFilter>("SortFilterProxyModel", 1, 0, "AllOf");
+    qmlRegisterUncreatableType<FilterContainerAttached>("SortFilterProxyModel", 1, 0, "FilterContainer", "FilterContainer can only be used as an attaching type");
 }
-//#ifndef BUILT_AS_PLUGINS
+
 //Q_COREAPP_STARTUP_FUNCTION(registerFiltersTypes)
-//#endif
+
