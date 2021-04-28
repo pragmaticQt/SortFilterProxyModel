@@ -3,6 +3,9 @@ import QtQml.Models 2.15
 
 ListModel {
 
+    readonly property var titleNames: ["Subject", "Sender", "Date"]
+    readonly property var roles: ["subject", "sender", "date"]
+
     ListElement {
         subject: "Happy New Year!"
         sender: "Grace K. <grace@software-inc.com>"

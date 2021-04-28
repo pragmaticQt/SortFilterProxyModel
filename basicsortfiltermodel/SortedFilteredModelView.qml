@@ -6,24 +6,17 @@ import QtQuick.Controls 2.15
 
 GroupBox {
 
-    property alias model:      sortedFilteredView.model
-    property alias titleNames: sortedFilteredView.titleNames
-    property alias roleNames:  sortedFilteredView.roleNames
-    property alias selectedRole: sortedFilteredView.selectedRole
+    property var    roleNames:    []
+    property alias  model:        sortedFilteredView.model
+    property string selectedRole: roleNames.length ? roleNames[0] : ""
 
     title: qsTr("Sorted/Filtered Model")
 
-    TableView {
+    SharedTableView {
         id: sortedFilteredView
         anchors.fill: parent
 
-        property string selectedRole: roleNames[0]
         signal columnClicked(int column)
-
-        readonly property var roleNames: ["subject", "sender", "date"]
-        readonly property var titleNames: ["Subject", "Sender", "Date"]
-
-//        model: sortFilterProxyModel
 
         sortIndicatorVisible: true
 
@@ -43,22 +36,6 @@ GroupBox {
             if (selectedRole !== roleNames[column]) {
                 selectedRole = roleNames[column]
             }
-        }
-
-        TableViewColumn {
-            role: "subject"
-            title: "Subject"
-            width: 200
-        }
-        TableViewColumn {
-            role: "sender"
-            title: "Sender"
-            width: 120
-        }
-        TableViewColumn {
-            role: "date"
-            title: "Date"
-            width: 120
         }
 
     }

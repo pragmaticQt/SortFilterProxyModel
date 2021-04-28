@@ -10,6 +10,7 @@ GridLayout {
     property alias currentIndex: filterColumnComboBox.currentIndex
     property alias filterCaseSensitive: filteCaseSensitiveCheckBox.checked
     property alias sorterCaseSensitive: sorterCaseSensitiveCheckBox.checked
+    property alias filterColumns: filterColumnComboBox.model
 
     rows: 4
     columns: 2
@@ -40,7 +41,6 @@ GridLayout {
         id: filterColumnComboBox
         currentIndex: 1
         Layout.fillWidth: true
-        model: sortedFilteredView.titleNames
     }
 
     CheckBox {

@@ -21,17 +21,17 @@ Window {
         sourceModel: emailModel
         sorters: [
             RoleSorter {
-                roleName: "subject"
+                roleName: emailModel.roles[0]
                 sortOrder: Qt.AscendingOrder
                 enabled: sortedFilteredView.selectedRole === roleName
             },
             RoleSorter {
-                roleName: "sender"
+                roleName: emailModel.roles[1]
                 sortOrder: Qt.AscendingOrder
                 enabled: sortedFilteredView.selectedRole === roleName
             },
             RoleSorter {
-                roleName: "date"
+                roleName: emailModel.roles[2]
                 sortOrder: Qt.DescendingOrder
                 enabled: sortedFilteredView.selectedRole === roleName
             }
@@ -55,15 +55,20 @@ Window {
             Layout.rightMargin: column.contentMargin
             Layout.leftMargin: Layout.rightMargin
             Layout.fillWidth: true
+
             model: emailModel
         }
 
         SortedFilteredModelView {
             id: sortedFilteredView
+
             Layout.rightMargin: column.contentMargin
             Layout.leftMargin: Layout.rightMargin
             Layout.fillWidth: true
+
             model: sortFilterProxyModel
+
+            roleNames: emailModel.roles
         }
 
         FilterPanel {
@@ -73,6 +78,7 @@ Window {
             Layout.leftMargin: Layout.rightMargin
             Layout.fillWidth: true
 
+            filterColumns: emailModel.titleNames
         }
     }
 }
