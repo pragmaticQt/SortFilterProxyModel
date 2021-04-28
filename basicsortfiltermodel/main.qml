@@ -8,7 +8,7 @@ import SortFilterProxyModel 1.0
 Window {
     id: window
     width: 500
-    height: 450
+    height: 600
     visible: true
     title: qsTr("Basic Sort/Filter Model")
 
@@ -36,12 +36,20 @@ Window {
                 enabled: sortedFilteredView.selectedRole === roleName
             }
         ]
+        filters: [
+
+            RegExpFilter {
+                roleName: sortedFilteredView.roleNames[filterColumnComboBox.currentIndex]
+                pattern: filterPattern.text
+                caseSensitivity: filteCaseSensitiveCheckBox.checked ? Qt.CaseSensitive : Qt.CaseInsensitive
+            }
+        ]
     }
-    Column {
+    ColumnLayout {
+        id: column
         anchors.fill: parent
         GroupBox {
-            anchors.left: parent.left
-            anchors.right: parent.right
+            Layout.fillWidth: true
             title: qsTr("Original Model")
 
             TableView {
@@ -68,8 +76,7 @@ Window {
         }
         GroupBox {
             title: qsTr("Sorted/Filtered Model")
-            anchors.left: parent.left
-            anchors.right: parent.right
+            Layout.fillWidth: true
 
             TableView {
                 id: sortedFilteredView
@@ -118,6 +125,53 @@ Window {
                     width: 120
                 }
 
+            }
+        }
+        GridLayout {
+            Layout.rightMargin: 20
+            Layout.leftMargin: 20
+            Layout.fillWidth: true
+
+            rows: 4
+            columns: 2
+
+            Label {
+                text: qsTr("Filter pattern: ")
+            }
+
+            TextField {
+                id: filterPattern
+                Layout.fillWidth: true
+                text: qsTr("Andy|Grace")
+            }
+
+            Label {
+                text: qsTr("Filter syntax: ")
+            }
+            ComboBox {
+                id: filterSyntaxComboBox
+                Layout.fillWidth: true
+                model: ["Regular expression", "Wildcard", "Fixed string"]
+            }
+
+            Label {
+                text: qsTr("Filter column: ")
+            }
+            ComboBox {
+                id: filterColumnComboBox
+                currentIndex: 1
+                Layout.fillWidth: true
+                model: sortedFilteredView.titleNames
+            }
+
+            CheckBox {
+                id: filteCaseSensitiveCheckBox
+                text: qsTr("Case sensitive filter")
+            }
+            CheckBox {
+                id: sorterCaseSensitiveCheckBox
+                text: qsTr("Case sensitive sorter")
+                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             }
         }
     }
