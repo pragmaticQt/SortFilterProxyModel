@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>EmailModel.qml</file>
+        <file>OriginalModelView.qml</file>
+        <file>SortedFilteredModelView.qml</file>
+        <file>FilterPanel.qml</file>
     </qresource>
 </RCC>
