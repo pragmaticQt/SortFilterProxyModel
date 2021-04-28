@@ -1,9 +1,10 @@
 TEMPLATE = subdirs
 
-SUBDIRS += \
+SUBDIRS += \    
     src/lib.pro \
     plugins \
     example \
-    test
+    test \
+    basicsortfiltermodel
 
 CONFIG += ordered release

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>EmailModel.qml</file>
+    </qresource>
+</RCC>
