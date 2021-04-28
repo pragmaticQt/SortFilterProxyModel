@@ -19,23 +19,38 @@ class QQmlSortFilterProxyModel : public QSortFilterProxyModel,
     Q_INTERFACES(SorterContainer)
     Q_INTERFACES(ProxyRoleContainer)
 
-    Q_PROPERTY(int count READ count NOTIFY countChanged)
+    Q_PROPERTY(int  count   READ count                    NOTIFY countChanged)
     Q_PROPERTY(bool delayed READ delayed WRITE setDelayed NOTIFY delayedChanged)
 
     Q_PROPERTY(QString filterRoleName READ filterRoleName WRITE setFilterRoleName NOTIFY filterRoleNameChanged)
-    Q_PROPERTY(QString filterPattern READ filterPattern WRITE setFilterPattern NOTIFY filterPatternChanged)
-    Q_PROPERTY(PatternSyntax filterPatternSyntax READ filterPatternSyntax WRITE setFilterPatternSyntax NOTIFY filterPatternSyntaxChanged)
-    Q_PROPERTY(QVariant filterValue READ filterValue WRITE setFilterValue NOTIFY filterValueChanged)
+    Q_PROPERTY(QString filterPattern  READ filterPattern  WRITE setFilterPattern  NOTIFY filterPatternChanged)
+    Q_PROPERTY(QVariant filterValue   READ filterValue    WRITE setFilterValue    NOTIFY filterValueChanged)
+    Q_PROPERTY(PatternSyntax filterPatternSyntax
+                                      READ filterPatternSyntax
+                                                          WRITE setFilterPatternSyntax
+                                                                                  NOTIFY filterPatternSyntaxChanged)
 
-    Q_PROPERTY(QString sortRoleName READ sortRoleName WRITE setSortRoleName NOTIFY sortRoleNameChanged)
-    Q_PROPERTY(bool ascendingSortOrder READ ascendingSortOrder WRITE setAscendingSortOrder NOTIFY ascendingSortOrderChanged)
+    Q_PROPERTY(QString sortRoleName       READ sortRoleName       WRITE setSortRoleName       NOTIFY sortRoleNameChanged)
+    Q_PROPERTY(bool    ascendingSortOrder READ ascendingSortOrder WRITE setAscendingSortOrder NOTIFY ascendingSortOrderChanged)
 
     Q_PROPERTY(QQmlListProperty<Filter> filters READ filtersListProperty)
     Q_PROPERTY(QQmlListProperty<Sorter> sorters READ sortersListProperty)
-    Q_PROPERTY(QQmlListProperty<ProxyRole> proxyRoles READ proxyRolesListProperty)
+    Q_PROPERTY(QQmlListProperty<ProxyRole>
+                                        proxyRoles
+                                                READ proxyRolesListProperty)
 
     QML_NAMED_ELEMENT(SortFilterProxyModel)
 public:
+    Q_INVOKABLE int roleForName(const QString& roleName) const;
+
+    Q_INVOKABLE QVariantMap get(int row) const;
+    Q_INVOKABLE QVariant get(int row, const QString& roleName) const;
+
+    Q_INVOKABLE QModelIndex mapToSource(const QModelIndex& proxyIndex) const override;
+    Q_INVOKABLE int mapToSource(int proxyRow) const;
+    Q_INVOKABLE QModelIndex mapFromSource(const QModelIndex& sourceIndex) const override;
+    Q_INVOKABLE int mapFromSource(int sourceRow) const;
+
     enum PatternSyntax {
         RegExp = QRegExp::RegExp,
         Wildcard = QRegExp::Wildcard,
@@ -78,16 +93,6 @@ public:
 
     QVariant data(const QModelIndex& index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
-
-    Q_INVOKABLE int roleForName(const QString& roleName) const;
-
-    Q_INVOKABLE QVariantMap get(int row) const;
-    Q_INVOKABLE QVariant get(int row, const QString& roleName) const;
-
-    Q_INVOKABLE QModelIndex mapToSource(const QModelIndex& proxyIndex) const override;
-    Q_INVOKABLE int mapToSource(int proxyRow) const;
-    Q_INVOKABLE QModelIndex mapFromSource(const QModelIndex& sourceIndex) const override;
-    Q_INVOKABLE int mapFromSource(int sourceRow) const;
 
     void setSourceModel(QAbstractItemModel *sourceModel) override;
 

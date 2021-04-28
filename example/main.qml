@@ -17,15 +17,15 @@ ApplicationWindow {
 
     SortFilterProxyModel {
         id: proxyModel
-        // @disable-check M16
+
         sourceModel: contactModel
-        // @disable-check M16
+
         sorters: [
             RoleSorter { roleName: "favorite"; sortOrder: Qt.DescendingOrder },
             StringSorter { roleName: "firstName" },
             StringSorter { roleName: "lastName" }
         ]
-        // @disable-check M16
+
         filters: [
             ValueFilter {
                 id: favoriteFilter
@@ -46,7 +46,7 @@ ApplicationWindow {
                 }
             }
         ]
-        // @disable-check M16
+
         proxyRoles: SwitchRole {
             name: "sectionRole"
             filters: ValueFilter {
